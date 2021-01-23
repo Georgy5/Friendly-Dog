@@ -28,12 +28,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-# LW Frontend
+# LW Frontend Setup
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
-# Authentification
+# User Authentification
 gem 'devise'
 
 group :development, :test do
