@@ -4,8 +4,9 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :breed
       t.string :size
-      t.string :categorydescription
-      t.boolean :hypoallergenic
+      t.string :category
+      t.string :description
+      t.boolean :hypoallergenic, default: false
       t.references :user, null: false, foreign_key: true
       t.string :city
 
