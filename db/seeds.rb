@@ -8,7 +8,7 @@
 require 'faker'
 
 puts "removing the world! (cleaning up database)"
-# User.destroy_all
+User.destroy_all
 puts "creating users"
 5.times do
   name = Faker::Name.name.split(' ')
@@ -20,8 +20,8 @@ puts "creating users"
   )
 end
 puts "the people are here"
+i = User.first.id
 5.times do
-  i = 1
   dog = Dog.new(
     name: Faker::Creature::Dog.name,
     breed: Faker::Creature::Dog.breed,
