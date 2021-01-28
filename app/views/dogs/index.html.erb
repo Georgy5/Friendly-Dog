@@ -1,14 +1,16 @@
 <h1>Look at the dogs</h1>
-<% @dogs.each do |dog| %>
-  <div>
-    <h3><%= dog.name %></h3>
-    <ul>
-      <li>Breed: <%= dog.breed %></li>
-      <li>Size: <%= dog.size %></li>
-      <li>Type of Support: <%= dog.category %></li>
-      <li>Hypoallergenic: <%= dog.hypoallergenic ? "You Betcha" : "Nope" %></li>
-      <li>Location: <%= dog.city %></li>
-      <li>Owner: <%= dog.user.first_name %> <%= dog.user.last_name %></li>
-    </ul>
-  </div>
-<% end %>
+<div class="grid">
+  <% @dogs.each do |dog| %>
+    <div class="card">
+      <h3><%= dog.name %></h3>
+      <ul>
+        <li>Breed: <%= dog.breed %></li>
+        <li>Size: <%= dog.size %></li>
+        <li>Type of Support: <%= dog.category %></li>
+        <li>Hypoallergenic: <%= dog.hypoallergenic ? "You Betcha" : "Nope" %></li>
+        <li>Location: <%= dog.city %></li>
+        <li>Owner: <%= dog.user.first_name %> <%= dog.user.last_name %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
