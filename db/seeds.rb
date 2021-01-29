@@ -8,7 +8,9 @@
 require 'faker'
 
 puts "removing the world! (cleaning up database)"
+Booking.destroy_all
 User.destroy_all
+
 puts "creating users"
 5.times do
   name = Faker::Name.name.split(' ')
@@ -19,6 +21,7 @@ puts "creating users"
     password: "password"
   )
 end
+
 puts "the people are here"
 i = User.first.id
 5.times do
@@ -35,3 +38,22 @@ i = User.first.id
 end
 
 puts "the people each have a dog, how nice"
+
+puts "make some bookings"
+bill = User.first
+tom = User.last
+fido = Dog.second
+spike = Dog.third
+first_booking = Booking.new(date: '1-1-2021', status: 'pending')
+first_booking.user = bill
+first_booking.dog = fido
+first_booking.save!
+second_booking = Booking.new(date: '1-1-2021', status: 'pending')
+second_booking.user = tom
+second_booking.dog = fido
+second_booking.save!
+third_booking = Booking.new(date: '1-1-2021', status: 'denied')
+third_booking.user = tom
+third_booking.dog = spike
+third_booking.save!
+puts "successfully booked"
