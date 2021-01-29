@@ -8,12 +8,11 @@ class DogsController < ApplicationController
   end
 
   def new
-    #TODO
     @dog = Dog.new
   end
 
   def create
-    @dog = dog.new(dog_params)
+    @dog = Dog.new(dog_params)
     @dog.user = current_user
     if @dog.save
       redirect_to dog_path(@dog)
@@ -23,10 +22,6 @@ class DogsController < ApplicationController
   end
 
   private
-
-  #TODO
-  def set_dog
-  end
 
   # strong params - only allow the white list through.
   def dog_params
