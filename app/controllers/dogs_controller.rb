@@ -37,6 +37,6 @@ class DogsController < ApplicationController
   # strong params - only allow the white list through.
   def dog_params
     params.require(:dog)
-      .permit(:name, :breed, :size, :category, :description, :hypoallergenic, :city)
+      .permit(:name, :breed, :size, :category, :description, :hypoallergenic, :city, :photo)
   end
 end
