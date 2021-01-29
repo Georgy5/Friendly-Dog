@@ -1,14 +1,16 @@
-<div class="banner">
+<div class="banner sticky">
   <h1>Look at the dogs</h1>
 </div>
 <div class="grid">
   <% @dogs.each do |dog| %>
+<!--    link_to dog_path(dog.id) do -->
     <div class="card">
-      <h3><%= dog.name %></h3>
-      <ul>
-        <li>Type of Support: <%= dog.category %></li>
-        <li>Location: <%= dog.city %></li>
-      </ul>
+      <div>
+        <h3><%= dog.name %></h3>
+        <p><%= dog.category %></p>
+      </div>
+      <p>City: <%= dog.city %></p>
     </div>
+  <!--  end  -->
   <% end %>
 </div>

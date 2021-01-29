@@ -1,19 +1,21 @@
 .grid {
+  padding-top: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
 }
 
 .card {
-  padding: 16px;
+  padding-top: 16px;
+  padding-left: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  ul {
-    padding: none;
-    list-style: none;
-  }
-
 }
+
+// .sticky {
+//   position: sticky;
+//   top: 0;
+// }
 
 
