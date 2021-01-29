@@ -1,0 +1,34 @@
+<%= simple_form_for(@dog) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Name" }%>
+    <%= f.input :breed,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Breed" }%>
+    <%= f.association :size, collection: ['small', 'med-small', 'medium', 'med-large', 'large'] %>
+    <%= f.input :size,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Name" }%>
+    <%= f.association :category, collection: ['seeing-eye-dog', 'emotional support', 'kid-friendly', 'underdog'] %>
+    <%= f.input :category,
+                required: true,
+                hint: 'No special characters.',
+                input_html: { autocomplete: "Size" } %>
+    <%= f.input :description, placeholder: "TODO" %>
+    <%= f.input :hypoallergenic, as: :boolean %>
+    <%= f.input :city,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Name" }%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Submit" %>
+  </div>
+<% end %>
