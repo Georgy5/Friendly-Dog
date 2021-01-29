@@ -1,14 +1,18 @@
 <div class="banner">
-  <h1>Look at the dogs</h1>
+  <div class="container">
+    <h1>Look at the dogs</h1>
+  </div>
 </div>
-<div class="grid">
-  <% @dogs.each do |dog| %>
-    <div class="card">
-      <h3><%= dog.name %></h3>
-      <ul>
-        <li>Type of Support: <%= dog.category %></li>
-        <li>Location: <%= dog.city %></li>
-      </ul>
-    </div>
-  <% end %>
+<div class="container">
+  <div class="grid">
+    <% @dogs.each do |dog| %>
+      <div class="card">
+        <h3><%= dog.name %></h3>
+        <ul>
+          <li>Type of Support: <%= dog.category %></li>
+          <li>Location: <%= dog.city %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
 </div>
