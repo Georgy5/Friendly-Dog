@@ -1,5 +1,6 @@
 class Dog < ApplicationRecord
   belongs_to :user
+  has_many :users, through: :bookings
 
   validates :name, presence: true
   validates :breed, presence: true
