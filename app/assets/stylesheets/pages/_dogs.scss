@@ -1,10 +1,12 @@
 .grid {
+  padding-top: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
 }
 
 .card {
+  position: relative;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -13,7 +15,11 @@
     padding: none;
     list-style: none;
   }
-
+  i {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
 }
 
 
