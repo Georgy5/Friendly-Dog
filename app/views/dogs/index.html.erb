@@ -1,19 +1,24 @@
 <div class="banner">
-  <h1>Look at the dogs</h1>
+  <div class="container">
+    <h1>Look at the dogs</h1>
+  </div>
 </div>
-<div class="grid">
-  <% @dogs.each do |dog| %>
-<!--    link_to dog_path(dog.id) do -->
-    <div class="card">
-      <div>
-        <h3><%= dog.name %></h3>
-        <p><%= dog.category %></p>
-      </div>
-      <p>City: <%= dog.city %></p>
+
+<div class="container">
+  <div class="grid">
+    <% @dogs.each do |dog| %>
+      <div class="card">
+        <%= link_to dog_path(dog.id) do %>
+          <div>
+            <h3><%= dog.name %></h3>
+            <p><%= dog.category %></p>
+          </div>
+        <% end %>
+        <p>Location: <%= dog.city %></p>
         <%= link_to dog_path(dog), id: "remove", data: { method: :delete } do %>
           <i class="fas fa-times"></i>
         <% end %>
-    </div>
-  <!--  end  -->
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
