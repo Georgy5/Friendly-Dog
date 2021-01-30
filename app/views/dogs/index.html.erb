@@ -14,7 +14,7 @@
         <% end %>
         <p><%= dog.category %></p>
         <p>City: <%= dog.city %></p>
-        <%= link_to dog_path(dog), id: "remove", data: { method: :delete } do %>
+        <%= link_to dog_path(dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{dog.name} is pretty swell..." } do %>
           <i class="fas fa-times"></i>
         <% end %>
       </div>
