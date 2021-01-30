@@ -1,5 +1,6 @@
 class BookingController < ApplicationController
   def new
+    # TODO change route to include dog ID
     @dog = Dog.find(params[:dog_id])
     @booking = Booking.new
   end
@@ -18,6 +19,8 @@ class BookingController < ApplicationController
   private
 
   def booking_params
+    raise
+    # TODO: param is missing or the value is empty: booking
     params.require(:booking).permit(:date, :status, :user_id, :dog_id)
   end
 end
