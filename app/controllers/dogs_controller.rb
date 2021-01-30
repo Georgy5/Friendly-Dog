@@ -23,6 +23,7 @@ class DogsController < ApplicationController
 
   def destroy
     @dog.destroy
+    redirect_to dogs_path
   end
 
   private
