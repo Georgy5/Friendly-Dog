@@ -11,10 +11,21 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      // text-decoration: underline;
+      text-shadow: 2px 2px 4px rgba(0,0,0,.6);
+    }
+  }
+
   ul {
     padding: none;
     list-style: none;
   }
+
   i {
     position: absolute;
     top: 16px;

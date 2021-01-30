@@ -1,6 +1,7 @@
 <div class="banner">
   <div class="container">
-    <h1>Look at the dogs</h1>
+    <h1>These dogs have skills</h1>
+    <p>which one can help you?</p>
   </div>
 </div>
 
@@ -9,12 +10,10 @@
     <% @dogs.each do |dog| %>
       <div class="card">
         <%= link_to dog_path(dog.id) do %>
-          <div>
             <h3><%= dog.name %></h3>
-            <p><%= dog.category %></p>
-          </div>
         <% end %>
-        <p>Location: <%= dog.city %></p>
+        <p><%= dog.category %></p>
+        <p>City: <%= dog.city %></p>
         <%= link_to dog_path(dog), id: "remove", data: { method: :delete } do %>
           <i class="fas fa-times"></i>
         <% end %>
