@@ -1,10 +1,10 @@
 class DogsController < ApplicationController
+  before_action :find_dog, only: [:show, :destroy]
   def index
     @dogs = Dog.all
   end
 
   def show
-    @dog = Dog.find(params[:id])
   end
 
   def new
@@ -21,7 +21,17 @@ class DogsController < ApplicationController
     end
   end
 
+  def destroy
+    @dog.destroy
+    redirect_to dogs_path
+  end
+
   private
+
+  def find_dog
+    @dog = Dog.find(params[:id])
+  end
+
 
   # strong params - only allow the white list through.
   def dog_params
