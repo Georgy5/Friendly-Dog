@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_dog, only: [:show, :destroy]
   def index
     @dogs = Dog.all
