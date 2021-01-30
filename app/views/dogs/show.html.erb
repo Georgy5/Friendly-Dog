@@ -6,6 +6,6 @@
     <p>City: <%= @dog.city %></p>
     <p>Character: <%= @dog.description %></p>
     <p>Possible use: <%= @dog.category %></p>
-    <p>Hypoallergenic: <%= check_box("Hypoallergenic", @dog.id, {checked: @dog.hypoallergenic}) %></p>
+    <p>Hypoallergenic: <%= @dog.hypoallergenic ? "👍" : "👎" %></p>
   </div>
 </div>
