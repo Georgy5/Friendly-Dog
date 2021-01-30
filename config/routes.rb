@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :dogs, only: [:index, :show, :new, :create, :delete]
+  resources :dogs, only: [:index, :show, :new, :create, :destroy]
 end
