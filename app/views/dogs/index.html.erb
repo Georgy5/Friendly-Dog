@@ -9,7 +9,7 @@
         <li>Type of Support: <%= dog.category %></li>
         <li>Location: <%= dog.city %></li>
         <%= link_to dog_path(dog), id: "remove", data: { method: :delete } do %>
-          <i class="far fa-minus-square"></i>
+          <i class="fas fa-times"></i>
         <% end %>
       </ul>
     </div>
