@@ -1,9 +1,11 @@
-<div>
-  <p>Name: <%= @dog.name %></p>
-  <p>Breed: <%= @dog.breed %></p>
-  <p>Size: <%= @dog.size %></p>
-  <p>City: <%= @dog.city %></p>
-  <p>Character: <%= @dog.description %></p>
-  <p>Possible use: <%= @dog.category %></p>
-  <p>Hypoallergenic: <%= check_box("Hypoallergenic", @dog.id, {checked: @dog.hypoallergenic}) %></p>
+<div class="container">
+  <div>
+    <p>Name: <%= @dog.name %></p>
+    <p>Breed: <%= @dog.breed %></p>
+    <p>Size: <%= @dog.size %></p>
+    <p>City: <%= @dog.city %></p>
+    <p>Character: <%= @dog.description %></p>
+    <p>Possible use: <%= @dog.category %></p>
+    <p>Hypoallergenic: <%= check_box("Hypoallergenic", @dog.id, {checked: @dog.hypoallergenic}) %></p>
+  </div>
 </div>
