@@ -1,5 +1,6 @@
 .grid {
-  padding-top: 32px;
+  padding-top: 16px;
+  padding-bottom: 64px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
@@ -14,16 +15,16 @@
 
   a {
     text-decoration: none;
-    color: black;
+    color: white;
     &:hover {
       // text-decoration: underline;
-      text-shadow: 2px 2px 4px rgba(0,0,0,.6);
+      text-shadow: 2px 2px 4px white;
     }
   }
 
-  ul {
-    padding: none;
-    list-style: none;
+  p {
+    color: white;
+    font-weight: lighter;
   }
 
   i {
@@ -32,10 +33,4 @@
     right: 16px;
   }
 }
-
-// .sticky {
-//   position: sticky;
-//   top: 0;
-// }
-
 
