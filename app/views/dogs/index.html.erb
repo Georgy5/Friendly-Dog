@@ -10,6 +10,9 @@
         <p><%= dog.category %></p>
       </div>
       <p>City: <%= dog.city %></p>
+        <%= link_to dog_path(dog), id: "remove", data: { method: :delete } do %>
+          <i class="fas fa-times"></i>
+        <% end %>
     </div>
   <!--  end  -->
   <% end %>

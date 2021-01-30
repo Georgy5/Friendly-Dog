@@ -6,11 +6,20 @@
 }
 
 .card {
-  padding-top: 16px;
-  padding-left: 16px;
+  position: relative;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  ul {
+    padding: none;
+    list-style: none;
+  }
+  i {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
 }
 
 // .sticky {
