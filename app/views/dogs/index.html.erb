@@ -1,7 +1,7 @@
-<div class="banner">
+<div class="banner ban-index">
   <div class="container">
     <h1>These dogs have skills</h1>
-    <p>which one can help you?</p>
+    <p>which one will help you?</p>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
             <h3><%= dog.name %></h3>
         <% end %>
         <p><%= dog.category %></p>
-        <p>City: <%= dog.city %></p>
+        <p>City: <%= dog.city %>, DE</p>
         <%= link_to dog_path(dog), id: "remove", data: { method: :delete } do %>
           <i class="fas fa-times"></i>
         <% end %>
