@@ -9,10 +9,13 @@
   <div class="grid">
     <% @dogs.each do |dog| %>
       <% if dog.photo.attached? %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path dog.photo.key, crop: :fill %>')">
-          <%= link_to dog_path(dog.id) do %>
-              <h3><%= dog.name %></h3>
-          <% end %>
+        <div class="card">
+          <div class="img-card">
+            <%= link_to dog_path(dog.id) do %>
+              <%= cl_image_tag dog.photo.key, crop: :fill %>
+            <% end %>
+          </div>
+          <h3><%= dog.name %></h3>
           <p><%= dog.category %></p>
           <p>City: <%= dog.city %>, DE</p>
           <%= link_to dog_path(dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{dog.name} is pretty swell..." } do %>
@@ -20,10 +23,14 @@
           <% end %>
         </div>
         <% else %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/500x400/?dog')">
+        <div class="card">
+          <div class="img-card">
             <%= link_to dog_path(dog.id) do %>
-                <h3><%= dog.name %></h3>
+              <img src="https://source.unsplash.com/500x400/?dog" alt="">
             <% end %>
+          </div>
+
+            <h3><%= dog.name %></h3>
             <p><%= dog.category %></p>
             <p>City: <%= dog.city %>, DE</p>
             <%= link_to dog_path(dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{dog.name} is pretty swell..." } do %>
