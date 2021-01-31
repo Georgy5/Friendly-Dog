@@ -1,131 +1,49 @@
 
-<h1 class="text-center"><%= @dog.name %></h1>
-<div class="container">
-  <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <h3>This could be your dog for one day</h3>
 
-      <% if @dog.photo.attached? %>
-        <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <img src="https://source.unsplash.com/500x400/?dog" alt="">
+
+<div class="container">
+  <div class="card-dog">
+      <%= link_to dog_path(@dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{@dog.name} is pretty swell..." } do %>
+        <i class="fas fa-times"></i>
       <% end %>
-        
-        <p><strong>Name: </strong>  <%= @dog.name %></p>
-        <p><strong>Breed: </strong>  <%= @dog.breed %></p>
-        <p><strong>Size: </strong>  <%= @dog.size %></p>
-        <p><strong>City: </strong>  <%= @dog.city %></p>
-        <p><strong>Character: </strong>  <%= @dog.description %></p>
-        <p><strong>Possible use: </strong>  <%= @dog.category %></p>
-        <p><strong>Hypoallergenic: </strong>  <%= @dog.hypoallergenic ? "👍" : "👎" %></p>
+    <% if @dog.photo.attached? %>
+      <%= cl_image_tag @dog.photo.key, height: 600, width: 500, crop: :fill %>
+    <% else %>
+      <img src="https://source.unsplash.com/1000x600/?dog" alt="">
+    <% end %>
+
+    <div class="card-dog-infos">
+      <div>
+        <h5>#<%= @dog.category %></h5>
+        <h2><%= @dog.name %></h2>
+        <p><i class="fas fa-map-marker"></i>  <%= @dog.city %></p>
+        <p><i class="fas fa-dog"></i> <%= @dog.breed %></p>
+        <p><i class="fas fa-weight"></i> <%= @dog.size %></p>
+        <p>Hypoallergenic: <%= @dog.hypoallergenic ? "👍" : "👎" %></p>
+        <p>Description</p>
+        <p><%= @dog.description %></p>
+      </div>
+      <div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dog-user avatar-bordered" />
+        <p>Owned by <span><%= @dog.user.first_name %> <%= @dog.user.last_name %></span></p>
+        <h2 class="card-dog-pricing">99,99€ per day </h2>
+        <%= link_to "Rent #{@dog.name}", new_dog_booking_path(@dog), class: "btn btn-primary"%>
       </div>
     </div>
+
   </div>
 </div>
 
-
-<div class="wrapper-dog-show">
-
-  <div class="big-box">
-    <div class="container container-dog-show-hero">
-        <div class="btn-group">
-          <%= link_to 'Book this dog', new_dog_booking_path(@dog), class: "btn btn-primary" %>
-          <%= link_to 'Back to all dogs', url_for(:back), class: "btn btn-primary" %>
-          <%= link_to dog_path(@dog), class: "btn btn-primary", method: :delete, data: { confirm: "are you sure? #{@dog.name} is pretty swell..." } %>
-        </div>
+<div class="container pb-4">
+  <%= link_to 'Back to all dogs', url_for(:back), class: "btn btn-primary btn-sm" %>
+  <%= link_to 'Retire this dog', dog_path(@dog.id), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "are you sure? #{@dog.name} is pretty swell..." } %>
+</div> 
 
 
 
 
-        </div>
 
-<div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="dog-show-hero-image">
-              <% if @dog.photo.attached? %>
-                <%= cl_image_tag @dog.photo.key, height: 600, width: 500, crop: :fill %>
-              <% else %>
-                <img src="https://source.unsplash.com/800x400/?dog" alt="">
-              <% end %>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-    <div class="container container-dog-show-info">
-      <!-- <div class="row row-dog-show-back">
-        <button><%= link_to 'Back to list', url_for(:back) %></button>
-      </div> -->
-      <div class="row row-dog-show-info">
-        <div class="col-xs-12 col-md-8">
-          <div class="dog-show-infos">
-            <p>#<%= @dog.category %></p>
-            <h2><%= @dog.name %></h2>
-            <div class="dog-show-infos-avatar-name">
-              <!-- add avatar picture here -->
-             <p>Owned by <span><%= @dog.user.first_name %> <%= @dog.user.last_name %></span></p>
-             <p> <i class="fas fa-map-marker"></i>  <%= @dog.city %></p>
-             <p><i class="fas fa-dog"></i> <%= @dog.breed %></p>
-             <p><i class="fas fa-weight"></i> <%= @dog.size %></p>
-             <p>Hypoallergenic: <%= @dog.hypoallergenic ? "👍" : "👎" %></p>
-            </div>
-            <div class="dogs-show-details-description">
-              <h4>Description</h4>
-              <p><%= @dog.description %></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <div class="dog-show-booking">
-            <div class="dog-show-price">
-              <h1>50 <i class="fas fa-euro-sign"></i> <br><span>per day</span></h1>
-            </div>
-
-            <!-- date picker -->
-            <div class="dog-show-datepicker" disable-dates= " <%= @date_json %> " >
-
-              <div class="col-xs-12">
-                <%= simple_form_for [@dog, @booking] do |f| %>
-                <div class="form-row">
-                  <div class="datepicker-field">
-                    <div>
-                    <%= f.input :date, as: :string, wrapper_html: { :class => "inline_field_wrapper" }, label: 'Select dates'%>
-                    <%= f.input :date, as: :hidden, wrapper_html: { :class => "inline_field_wrapper" } %>
-                    </div>
-
-                    <div class="datepicker-submit">
-                    <%= f.button :submit, :disabled => @user_not_logged, class: 'btn btn-primary' %>
-                    </div>
-                  </div>
-                </div>
-                <% end %>
-              </div>
-
-            </div>
-
-            <div class="dog-show-booking-links">
-              <!-- here is the logic to make buttons invisible to non logged users or not owner of listing -->
-              <% if current_user == @dog.user %>
-                <div class="dog-show-owner-actions">
-                  <p>You are the owner of this dog</p>
-                  <%= link_to 'Edit',edit_dog_path(@dog), class: 'btn btn-danger' %>
-                  <%= link_to 'delete',dog_path(@dog), method: 'delete', class: 'btn btn-danger' %></div>
-                </div>
-              <% end %>
-              <!-- end of buttons stuff -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-  </div>
-
-</div>
 
 
 

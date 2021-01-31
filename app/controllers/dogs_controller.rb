@@ -6,18 +6,6 @@ class DogsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
-
-    @user_not_logged = !user_signed_in?
-    date_range = []
-
-    @bookings = Booking.where("dog_id = ?", params[:id])
-
-    @bookings.each do |booking|
-      date_range << {from: booking.date, to: booking.date}
-    end
-
-    @date_json = date_range.to_json
   end
 
   def new

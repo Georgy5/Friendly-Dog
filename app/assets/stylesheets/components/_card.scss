@@ -12,3 +12,55 @@
   border-radius: 5px;
   box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
 }
+
+
+.card-dog {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.card-dog > img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-dog h2 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.card-dog p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 1;
+}
+
+
+.card-dog .card-dog-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-dog-infos .card-dog-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 80px;
+}
+
+
+.card-dog .close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 100;
+}
