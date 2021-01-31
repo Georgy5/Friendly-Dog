@@ -15,9 +15,11 @@
               <%= cl_image_tag dog.photo.key, crop: :fill %>
             <% end %>
           </div>
-          <h3><%= dog.name %></h3>
-          <p><%= dog.category %></p>
-          <p>City: <%= dog.city %>, DE</p>
+          <div class="basic-info">
+            <h3><%= dog.name %></h3>
+            <p><%= dog.category %></p>
+            <p>City: <%= dog.city %>, DE</p>
+          </div>
           <%= link_to dog_path(dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{dog.name} is pretty swell..." } do %>
             <i class="fas fa-times"></i>
           <% end %>
@@ -29,15 +31,16 @@
               <img src="https://source.unsplash.com/500x400/?dog" alt="">
             <% end %>
           </div>
-
+          <div class="basic-info">
             <h3><%= dog.name %></h3>
             <p><%= dog.category %></p>
             <p>City: <%= dog.city %>, DE</p>
-            <%= link_to dog_path(dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{dog.name} is pretty swell..." } do %>
-              <i class="fas fa-times"></i>
-            <% end %>
           </div>
-        <% end %>
+          <%= link_to dog_path(dog), id: "remove", method: :delete, data: { confirm: "are you sure? #{dog.name} is pretty swell..." } do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
