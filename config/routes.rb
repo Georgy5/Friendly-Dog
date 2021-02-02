@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :dogs, only: [:index, :show, :new, :create, :destroy] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:index, :new, :create]
   end
 end

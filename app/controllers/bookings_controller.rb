@@ -1,9 +1,4 @@
 class BookingsController < ApplicationController
-  def index
-    # TODO - Only show Bookings of the current user
-    @bookings = Booking.all
-  end
-
   def new
     @dog = Dog.find(params[:dog_id])
     @booking = Booking.new
@@ -18,6 +13,11 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    # TODO - Only show Bookings of the current user
+    @bookings = Booking.all
   end
 
   private
