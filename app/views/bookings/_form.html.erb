@@ -1,0 +1,10 @@
+<%= simple_form_for [@dog, @booking] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :date,
+   placeholder: "dd-mm-yyyy" %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
