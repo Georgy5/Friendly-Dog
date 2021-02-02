@@ -6,6 +6,6 @@ class Dog < ApplicationRecord
   validates :name, presence: true
   validates :breed, presence: true
   validates :size, presence: true, inclusion: { in: ['small', 'med-small', 'medium', 'med-large', 'large'] }
-  validates :category, presence: true, inclusion: { in: ['seeing-eye-dog', 'emotional support', 'kid-friendly', 'underdog'] }
+  validates :category, presence: true, inclusion: { in: ['guide dog', 'emotional support', 'kid-friendly', 'search and rescue'] }
   validates :city, presence: true
 end
