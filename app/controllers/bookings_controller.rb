@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @dog = dog.find(params[:dog_id])
+    @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
     if @booking.save
       redirect_to booking_new_path(@dog)
@@ -19,8 +19,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    raise
     # TODO: param is missing or the value is empty: booking
-    params.require(:booking).permit(:user_id, :dog_id)
+    params.require(:booking).permit(:date, :status, :user_id, :dog_id)
   end
 end
