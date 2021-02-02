@@ -2,7 +2,7 @@
 
 <ul>
 <% @bookings.each do |booking| %>
-  <li>Dog: <%= booking.dog.name %> - Date: <%= booking.date %> - Dog-owner:
+  <li><%= booking.dog.name %> - <%= booking.date %> -
      <%= booking.dog.user.first_name %>  <%= booking.dog.user.last_name %></li>
   <% end %>
 </ul>

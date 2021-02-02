@@ -9,15 +9,16 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
     if @booking.save
-      redirect_to booking_new_path(@dog)
+      # TODO - Fix redirect after submitting a new booking
+      # redirect_to booking_new_path(@dog)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
   end
 
   def show
-    # TODO - Only show Bookings of the current user
-    @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   private
