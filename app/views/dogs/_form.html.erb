@@ -8,7 +8,7 @@
     <%= f.input :breed,
                 required: true %>
     <%= f.input :size, collection: ['small', 'med-small', 'medium', 'med-large', 'large'] %>
-    <%= f.input :category, collection: ['seeing-eye-dog', 'emotional support', 'kid-friendly', 'underdog'] %>
+    <%= f.input :category, collection: Dog::CATEGORIES %>
     <%= f.input :description, placeholder: "TODO" %>
     <%= f.input :hypoallergenic, as: :boolean %>
     <%= f.input :city, required: true %>
