@@ -9,8 +9,9 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
     @booking.user = current_user
-    # TODO - figure out logic for approving a dog
+    # TODO - figure out logic for approving a booking
     # @dog.bookings.last.status
+    # Note - the following line is a quick and dirty fix
     @booking.status = "default"
     if @booking.save
       redirect_to booking_path(@booking)
