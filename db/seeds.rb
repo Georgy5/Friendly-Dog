@@ -7,12 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+cities = ['Berlin', 'Cottbus', 'Eberswalde', 'Frankurt an der Oder', 'Potsdam', 'Schwedt',
+          'Bremen', 'Bremerhaven', 'Hamburg', 'Munich', 'Nürnberg', 'Dinkelsbühl', 'Cologne',
+          'Düsseldorf', 'Gelsenkirchen', 'Dortmund', 'Essen', 'Bonn', 'Hamm', 'Münster']
+
+
 puts "removing the world! (cleaning up database)"
 Booking.destroy_all
 User.destroy_all
 
 puts "creating users"
-5.times do
+20.times do
   name = Faker::Name.name.split(' ')
   person = User.create!(
     first_name: name.first,
@@ -24,13 +29,13 @@ end
 
 puts "the people are here"
 i = User.first.id
-5.times do
+cities.each do |city|
   dog = Dog.new(
     name: Faker::Creature::Dog.name,
     breed: Faker::Creature::Dog.breed,
     size: ['small', 'med-small', 'medium', 'med-large', 'large'].sample,
-    category: ['seeing-eye-dog', 'emotional support', 'kid-friendly', 'underdog'].sample,
-    city: Faker::Address.city
+    category: ['guide dog', 'emotional support', 'kid-friendly', 'search and rescue'].sample,
+    city: city
   )
   dog.user = User.find(i)
   dog.save!
