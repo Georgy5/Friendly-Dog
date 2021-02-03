@@ -8,9 +8,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
+    @booking.user = current_user
+    # TODO - figure out logic for approving a dog
+    # @dog.bookings.last.status
+    @booking.status = "default"
     if @booking.save
-      # TODO - Fix redirect after submitting a new booking
-      # redirect_to booking_new_path(@dog)
       redirect_to booking_path(@booking)
     else
       render :new
