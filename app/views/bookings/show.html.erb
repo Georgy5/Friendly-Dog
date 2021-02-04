@@ -5,10 +5,17 @@
 
       <ul>
       <% @bookings.each do |booking| %>
-        <li>Dog: <%= booking.dog.name %> - Date: <%= booking.date %> - Dog-owner:
-          <%= booking.dog.user.first_name %>  <%= booking.dog.user.last_name %></li>
+        <li>
+          <%= booking.date %> Dog: <%= booking.dog.name %> <br>
+          Dog-owner:
+          <%= booking.dog.user.first_name %>  <%= booking.dog.user.last_name %>
+           - City: <%= booking.dog.city %>
+        </li>
         <% end %>
       </ul>
+      <div class="btn-group">
+				<%= link_to 'Back', dogs_path, class: "btn btn-default" %>
+			</div>
 		</div>
 	</div>
 </div>
