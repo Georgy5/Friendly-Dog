@@ -9,10 +9,8 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
     @booking.user = current_user
-    # TODO - figure out logic for approving a booking
-    # @dog.bookings.last.status
     # Note - the following line is a quick and dirty fix
-    @booking.status = "default"
+    @booking.status = "approved"
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -21,7 +19,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings.reverse
   end
 
   private
