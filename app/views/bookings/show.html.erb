@@ -1,8 +1,14 @@
-<h1>My Bookings</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 p-5">
+      <h1>My Bookings</h1>
 
-<ul>
-<% @bookings.each do |booking| %>
-  <li>Dog: <%= booking.dog.name %> - Date: <%= booking.date %> - Dog-owner:
-     <%= booking.dog.user.first_name %>  <%= booking.dog.user.last_name %></li>
-  <% end %>
-</ul>
+      <ul>
+      <% @bookings.each do |booking| %>
+        <li>Dog: <%= booking.dog.name %> - Date: <%= booking.date %> - Dog-owner:
+          <%= booking.dog.user.first_name %>  <%= booking.dog.user.last_name %></li>
+        <% end %>
+      </ul>
+		</div>
+	</div>
+</div>
