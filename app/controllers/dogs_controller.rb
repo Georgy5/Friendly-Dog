@@ -3,6 +3,15 @@ class DogsController < ApplicationController
   before_action :find_dog, only: [:show, :destroy]
   def index
     @dogs = Dog.all
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @dogs.geocoded.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { dog: dog })
+      }
+    end
   end
 
   def show
