@@ -1,0 +1,11 @@
+<div class="container">
+	<h2>Book <%= @dog.name %></h2>
+
+  <!-- Show status of availability -->
+
+	<%= render 'form' %>
+
+	<div class="btn-group">
+		<%= link_to 'Back', dogs_path, class: "btn btn-default" %>
+	</div>
+</div>
