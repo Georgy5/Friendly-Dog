@@ -42,7 +42,6 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
   end
 
-
   # strong params - only allow the white list through.
   def dog_params
     params.require(:dog)
