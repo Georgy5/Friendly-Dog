@@ -1,11 +1,16 @@
 .ban-index {
   background-image: url('https://images.unsplash.com/photo-1521247560470-d2cbfe2f7b47?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib');
-  padding: 82px 0;
+  padding-top: 128px;
+  padding-bottom: 0px;
   box-shadow: 0 16px 16px rgba(0,0,0,0.5);
   position: sticky;
-  top: -86px;
+  top: -128px;
   z-index: 2;
   margin-bottom: 16px;
+
+  p {
+    padding-bottom: 24px;
+  }
 }
 
 .flexit {
