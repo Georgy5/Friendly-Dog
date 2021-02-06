@@ -1,5 +1,7 @@
 import flatpickr from "flatpickr";
 
-flatpickr(".datepicker", {
-  altInput: true
-});
+  flatpickr(".datepicker", {
+    altInput: true
+  });
+
+export { flatpickr };
