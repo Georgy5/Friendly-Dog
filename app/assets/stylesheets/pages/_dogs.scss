@@ -45,9 +45,9 @@
 
   .img-card {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
     img {
         width: 200px;
         height: 200px;

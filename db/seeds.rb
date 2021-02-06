@@ -43,7 +43,7 @@ cities.each do |city|
     city: city
   )
   dog.user = User.find(i)
-  pic_url = URI.open("https://source.unsplash.com/500x400/?#{dog.breed}")
+  pic_url = URI.open("https://source.unsplash.com/800x600/?#{dog.breed}")
   dog.photo.attach(io: pic_url, filename: "#{dog.name}_#{dog.breed}.png", content_type: 'image/png')
   dog.save!
   i += 1
