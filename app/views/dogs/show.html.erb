@@ -6,7 +6,7 @@
       <img src="https://source.unsplash.com/1000x600/?dog" alt="">
     <% end %>
     <div class="card-dog-infos">
-      <div>
+      <div class="card-dog-left">
         <h5>#<%= @dog.category %></h5>
         <h2><%= @dog.name %></h2>
         <p><i class="fas fa-map-marker"></i>  <%= @dog.city %></p>
@@ -16,15 +16,17 @@
         <p>Description</p>
         <p><%= @dog.description %></p>
       </div>
-      <div>
+      <div class="card-dog-right">
         <% if current_user.dogs.empty? %>
           <%= image_tag "https://res.cloudinary.com/l5141/image/upload/v1612464373/ekhsu0kdqotrqw2zmkps.jpg", class: "card-dog-user avatar-bordered" %>
         <% else %>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "card-dog-user avatar-bordered" %>
         <% end %>
         <p>Owned by <span><%= @dog.user.first_name %> <%= @dog.user.last_name %></span></p>
-        <h2 class="card-dog-pricing">99,99€ per day </h2>
-        <%= link_to "Book this dog", new_dog_booking_path(@dog), class: "btn btn-info btn-lg"%>
+          <div class="card-dog-right-price">
+            <h2 class="card-dog-pricing">99,99€ per day </h2>
+            <%= link_to "Select a date", new_dog_booking_path(@dog), class: "btn btn-info btn-lg"%>
+        </div>
       </div>
     </div>
   </div>

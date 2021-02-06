@@ -58,6 +58,24 @@
 }
 
 
+.card-dog-left {
+  width: 70%;
+}
+
+.card-dog-right {
+  padding-top: 32px;
+  height: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+card-dog-description {
+  padding-right: 80px;
+}
+
 .card-dog .close {
   position: absolute;
   top: 2px;
