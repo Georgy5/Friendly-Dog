@@ -9,7 +9,7 @@
                 required: true %>
     <%= f.input :size, collection: ['small', 'med-small', 'medium', 'med-large', 'large'] %>
     <%= f.input :category, collection: Dog::CATEGORIES %>
-    <%= f.input :description, placeholder: "TODO" %>
+    <%= f.input :description %>
     <%= f.input :hypoallergenic, as: :boolean %>
     <%= f.input :city, required: true %>
     <%= f.input :photo, as: :file %>
