@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
 
 cities = ['Berlin', 'Cottbus', 'Eberswalde', 'Frankurt an der Oder', 'Potsdam', 'Schwedt',
           'Bremen', 'Bremerhaven', 'Hamburg', 'Munich', 'Nürnberg', 'Dinkelsbühl', 'Cologne',
@@ -38,6 +39,8 @@ cities.each do |city|
     city: city
   )
   dog.user = User.find(i)
+  pic_url = URI.open("https://source.unsplash.com/500x400/?#{dog.breed}")
+  dog.photo.attach(io: pic_url, filename: "#{dog.name}_#{dog.breed}.png", content_type: 'image/png')
   dog.save!
   i += 1
 end
