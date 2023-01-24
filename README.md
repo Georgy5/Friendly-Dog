@@ -1,6 +1,5 @@
 # FriendlyDog
-Find your next furry friend 🐶 @ 
-https://friendlydog.herokuapp.com/
+Find your next furry friend 🐶
 
 ## Background
 This app was built during the coding bootcamp of Le Wagon (Batch 480) as a sort of simple Airbnb Clone, i.e. a Marketplace app.
